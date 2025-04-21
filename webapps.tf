@@ -1,5 +1,5 @@
-resource "azurerm_service_plan" "sp" {
-    name = "sp-${ var.project }-${ var.environment }"
+resource "azurerm_service_plan" "asp" {
+    name = "asp-${ var.project }-${ var.environment }"
     location = var.location
     resource_group_name = azurerm_resource_group.rg.name
     sku_name = "B1"
@@ -12,7 +12,7 @@ resource "azurerm_linux_web_app" "webappui" {
     name = "ui-${ var.project }-${ var.environment }"
     location = var.location
     resource_group_name = azurerm_resource_group.rg.name
-    service_plan_id = azurerm_service_plan.sp.id
+    service_plan_id = azurerm_service_plan.asp.id
 
     site_config {
         always_on = true
@@ -34,7 +34,7 @@ resource "azurerm_linux_web_app" "webappapi" {
     name = "api-${ var.project }-${ var.environment }"
     location = var.location
     resource_group_name = azurerm_resource_group.rg.name
-    service_plan_id = azurerm_service_plan.sp.id
+    service_plan_id = azurerm_service_plan.asp.id
 
     site_config {
         always_on = true

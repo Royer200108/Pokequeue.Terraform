@@ -12,7 +12,7 @@ variable "location" {
 variable "project" {
     type = string
     description = "The name of the project"
-    default = "pokequeue"
+    default = "mypokequeue"
 }
 
 variable "environment" {
