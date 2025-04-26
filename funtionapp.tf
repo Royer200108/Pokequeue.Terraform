@@ -9,7 +9,7 @@ resource "azurerm_linux_function_app" "functionapp1" {
 
   site_config {
     application_stack {
-      python_version = "3.11"  # Indica la versión de Python deseada
+      python_version = "3.11"  # Indica la versión de Python
     }
   }
 }
